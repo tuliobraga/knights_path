@@ -49,7 +49,7 @@ class Knight:
 
 		squares_visited = 1
 		while squares_visited < self.board.size:
-			if not board.visited(x,y):
+			if not self.board.visited(x,y):
 				self.board.visit(x,y)
 				self.board.show()
 				squares_visited+=1
