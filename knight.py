@@ -44,7 +44,13 @@ class Knight:
 
 		# print board's initial state
 		self.board.show()
-		print self.availableMoves(0,0)
+		moves = self.availableMoves(0,0)
+		x,y = moves.pop();
 
-		#self.board.visit(2,2)
-		#self.board.show()
+		squares_visited = 1
+		while squares_visited < self.board.size:
+			if not board.visited(x,y):
+				self.board.visit(x,y)
+				self.board.show()
+				squares_visited+=1
+
