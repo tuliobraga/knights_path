@@ -13,7 +13,7 @@ class Board:
 			self.squares.append(False)
 
 	# verify if square is already visited
-	def visited(self, x,y):
+	def visited(self,x,y):
 		return self.squares[index(x,y,self.N)]
 
 	# visit a square
