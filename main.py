@@ -1,13 +1,14 @@
 import sys
-from tabuleiro import Tabuleiro
+from board import Board
 
 if len(sys.argv) < 2:
-	print "Tamanho tabuleiro nao foi definido. Use 'python main.py [tamanho]'"
+	print "Board size is not defined. Use 'python main.py [tamanho]'"
 	sys.exit()
-# tamanho do tabuleiro
+
+# board size
 N = int(sys.argv[1])
 
-tabuleiro = Tabuleiro(N)
-tabuleiro.imprimir()
-tabuleiro.visitar(2,2)
-tabuleiro.imprimir()
+b = Board(N)
+b.show()
+b.visit(2,2)
+b.show()
