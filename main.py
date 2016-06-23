@@ -1,4 +1,5 @@
 import sys
+from knight import Knight
 from board import Board
 
 if len(sys.argv) < 2:
@@ -9,6 +10,5 @@ if len(sys.argv) < 2:
 N = int(sys.argv[1])
 
 b = Board(N)
-b.show()
-b.visit(2,2)
-b.show()
+k = Knight(b)
+k.knightsPath()
