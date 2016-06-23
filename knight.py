@@ -32,7 +32,7 @@ class Knight:
 
 		availableMoves = []
 		for x,y in moves:
-			if x >= 0 and y >= 0 and x < self.board.N and y < self.board.N:
+			if x >= 0 and y >= 0 and x < self.board.N and y < self.board.N and not self.board.visited(x,y):
 				availableMoves.append((x,y))
 
 		return availableMoves
@@ -57,7 +57,7 @@ class Knight:
 			for px,py in moves:
 				next_moves = self.availableMoves(px,py)
 				print px, py, len(next_moves)
-				if len(next_moves) < num_moves and not self.board.visited(px,py):
+				if len(next_moves) < num_moves:
 					num_moves = len(next_moves)
 					x = px
 					y = py
