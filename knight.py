@@ -42,28 +42,31 @@ class Knight:
 
 	# knight's path algorithm
 	def knightsPath(self):
-		# set initial position
+		# set a random initial position
 		x=random.randint(0, self.board.N-1)
 		y=random.randint(0, self.board.N-1)
 
 		# initialize path as empty list
 		path = []
 
-		# goal function
+		# goal function / evaluation function
 		while len(path) < self.board.size:
-			print "move:",x,y
+			# make a move
+			#print "move:",x,y
 			self.board.visit(x,y)
-			self.board.show()
+			#self.board.show()
 			path.append((x,y))
+
+			# verify next available moves
 			moves = self.availableMoves(x,y)
 			num_moves = float("inf")
 			for px,py in moves:
 				next_moves = self.availableMoves(px,py)
-				print px, py, len(next_moves)
+				#print px, py, len(next_moves)
+				# select the move with less next moves
 				if len(next_moves) < num_moves:
 					num_moves = len(next_moves)
 					x = px
 					y = py
 
-		print path
-		print len(path)
+		return len(set(path))

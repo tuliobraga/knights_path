@@ -9,6 +9,7 @@ class Board:
 	def __init__(self, N):
 		self.N = N
 		self.size = N*N
+		self.squares = []
 		for i in xrange(0, self.size):
 			self.squares.append(False)
 
