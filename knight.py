@@ -1,4 +1,5 @@
 from functions import index
+import random
 
 class Knight:
 
@@ -10,6 +11,7 @@ class Knight:
 
 	# find out the available moves
 	def availableMoves(self, current_x, current_y):
+		# possible moves
 		x_p2 = current_x + 2
 		x_p1 = current_x + 1
 		x_m2 = current_x - 2
@@ -30,6 +32,7 @@ class Knight:
 			(x_m1, y_m2),
 		]
 
+		# check available moves
 		availableMoves = []
 		for x,y in moves:
 			if x >= 0 and y >= 0 and x < self.board.N and y < self.board.N and not self.board.visited(x,y):
@@ -40,8 +43,8 @@ class Knight:
 	# knight's path algorithm
 	def knightsPath(self):
 		# set initial position
-		x=0
-		y=0
+		x=random.randint(0, self.board.N-1)
+		y=random.randint(0, self.board.N-1)
 
 		# initialize path as empty list
 		path = []
